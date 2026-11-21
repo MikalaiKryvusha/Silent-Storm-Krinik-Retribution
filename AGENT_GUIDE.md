@@ -484,7 +484,7 @@ successes). Living reference — never DONE-tagged.
 |-------|-------|
 | **Name / brand** | `Krinik-Retribution` (owner, chat 2026-11-21) |
 | **Short name** | `Krinik-Retribution` |
-| **GitHub repository** | `https://github.com/MikalaiKryvusha/Krinik-Retribution` |
+| **GitHub repository** | `https://github.com/MikalaiKryvusha/Silent-Storm-Krinik-Retribution` |
 | **Local project folder** | `d:\work\ai_sandbox\Silent-Storm-Krinik-Retribution` |
 | **Author / owner** | `Mikalai Kryvusha` |
 | **License** | `MIT` (LICENSE in the repo root) |

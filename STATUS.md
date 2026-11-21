@@ -14,7 +14,7 @@
 ### Сессия 1 — 2026-11-21: фундамент ✅
 - **KAIF 2.9 (+ предрелиз 2.10)** развёрнут из `D:\work\ai_sandbox\KAIF`, язык ru, сфера programming.
 - **Название** — Krinik-Retribution (слово владельца); репозиторий GitHub переименован:
-  `https://github.com/MikalaiKryvusha/Krinik-Retribution`.
+  `https://github.com/MikalaiKryvusha/Silent-Storm-Krinik-Retribution`.
 - **Карты, мастер-план, домашние правила** заполнены.
 
 ### Сессия 2 — 2026-11-21 14:39 +03:00: Kimi и первый вертикальный срез ✅

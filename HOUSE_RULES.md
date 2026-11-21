@@ -21,7 +21,7 @@
 
 | Система | Что агент там делает | Точка входа | Где лежат учётные данные |
 |---|---|---|---|
-| GitHub — репозиторий проекта | push, issues, releases (по правилам git-политики гайда) | `https://github.com/MikalaiKryvusha/Krinik-Retribution`, `gh` | системное хранилище ключей Windows (`gh auth status` → keyring) |
+| GitHub — репозиторий проекта | push, issues, releases (по правилам git-политики гайда) | `https://github.com/MikalaiKryvusha/Silent-Storm-Krinik-Retribution`, `gh` | системное хранилище ключей Windows (`gh auth status` → keyring) |
 
 ## 3. Стенды, окружения и устройства
 
