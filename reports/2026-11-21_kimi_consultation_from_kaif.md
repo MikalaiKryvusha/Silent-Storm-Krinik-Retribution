@@ -72,20 +72,22 @@ Kimi tool mapping, поэтому его содержимое я не переп
 
 Для Kimi событие `PermissionRequest` — точка звукового зова перед ожиданием разрешения. Текст
 передаётся через UTF-8 файл, а синтез запускается фоном; это обходит порчу кириллицы в argv Windows
-и не блокирует ход агента. Для контроля окна используются `Stop` (там есть `usage`) и `PostCompact`.
-Важно: `PostCompact` observation-only, поэтому повторное чтение канона закреплено в `AGENTS.md` и
-в следующем `UserPromptSubmit`, а не в предположении, что PostCompact сможет внедрить контекст.
+и не блокирует ход агента. После живого compaction контроль окна исправлен: свежий
+`token_counting.measured` читается на `UserPromptSubmit` и `PostToolUse`; `Stop.usage` — fallback,
+`PostCompact` сбрасывает ступени. Важно: `PostCompact` observation-only, поэтому повторное чтение
+канона закреплено в `AGENTS.md` и в следующем `UserPromptSubmit`.
 
 ## Активация подтверждена
 
 Официальный `@moonshot-ai/kimi-code` CLI 2.7.2 установлен через npm. `kimi doctor config` принял и
 candidate, и активный `C:/Users/krinik/.kimi-code/config.toml`; перед заменой создана timestamped
-резервная копия. Активированы `UserPromptSubmit` для resume/refresh, `Stop` и `PostCompact` для окна,
-`PreToolUse` для closing gate и `PermissionRequest` для голосового зова. Режим `auto` включён словом
-владельца. В живой сессии изменения применяются через `/reload` или новую сессию; это отдельное
-действие UI, а не ограничение адаптера.
+резервная копия. Активированы `UserPromptSubmit` для resume/refresh и окна, `PostToolUse` для окна,
+`Stop` и `PostCompact` как fallback/reset, `PreToolUse` для closing gate и `PermissionRequest` для
+голосового зова. Режим `auto` включён словом владельца. В живой сессии изменения применяются через
+`/reload` или новую сессию; это отдельное действие UI, а не ограничение адаптера.
 
-Формула Kimi usage подтверждена из реального wire: `inputOther + inputCacheRead + inputCacheCreation`.
-Тесты адаптера покрыли 50/80/85%, запрет раннего закрытия, повторное взведение после компакции.
+Для отображаемого окна Kimi используется `token_counting.measured`; fallback usage —
+`inputOther + inputCacheRead + inputCacheCreation`. Тесты адаптера покрыли 80/85 % во время хода,
+однократное срабатывание, отсечение старых записей и повторное взведение после компакции.
 Голосовой запуск с Glass + Eugene наблюдался владельцем; переход на `pythonw.exe` без `detached`
 устраняет консольное окно Python.

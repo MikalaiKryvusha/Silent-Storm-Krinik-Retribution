@@ -24,6 +24,8 @@
   `kimi doctor`; режим `auto` включён по `[OWNER] «Всегда ДА, разрешаю» · 2026-11-21 · чат этой сессии`.
   В новой сессии наблюдены `UserPromptSubmit` и
   запись usage через `Stop`. Контроль окна — 1 048 576 токенов, пороги 75/80/85/92%.
+  После живого compaction хук исправлен: читает `token_counting.measured` на `UserPromptSubmit` и
+  `PostToolUse`, а не ждёт `Stop`; 85 %, повтор и re-arm после compaction проверены (`bugs/03_DONE`).
 - **Superpowers 7.0.2** имеет нативный Kimi-манифест; установка плагина ещё ждёт действия владельца ниже.
 - **Инструменты:** `npm run doctor` — **17/17 OK**. Добавлены vcpkg, Context7 и Serena; Context7 выполнил
   реальный запрос документации, Serena вернула 28 MCP-инструментов.

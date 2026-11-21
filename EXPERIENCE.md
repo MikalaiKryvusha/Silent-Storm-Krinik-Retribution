@@ -80,6 +80,17 @@
 
 ## Entries
 
+### EXP-0003 · 2026-11-21 · ❌→✅ · #kimi #hooks #context-window #compaction
+class: claim-before-evidence
+**Context:** Kimi auto-compacted at a displayed 85 % before KAIF started the soft closure.
+**Tried / did:** read the official `loop_control`/`token_counting` contract and the live wire; moved Kimi measurement from Stop-only usage to fresh `token_counting.measured` on prompt/tool events.
+**Result:** ❌→✅ — 85 % now fires during the turn once; compaction invalidates old counts and a fresh 80 % rearms the cut step. → link: bugs/03
+**Lesson:** provider usage, the displayed context count and the internal compaction trigger are different observables; adapt to the actual event stream, not to Claude's transcript shape.
+**Repro:** `node .kaif/hooks/context-window.mjs --selftest` — the two Kimi wire cases pass; disabling wire reads makes both red.
+**Trigger:** changing context monitoring → inspect `token_counting.measured`, `usage.record` and `context.apply_compaction` in the live wire before choosing a hook event.
+**Not for:** inferring Kimi's exact reserved compaction threshold; the docs do not disclose it for this configuration.
+mechanized: .kaif/hooks/context-window.mjs --selftest
+
 ### EXP-0002 · 2026-11-21 · ❌→✅ · #kimi #hooks #windows
 class: shell-lied
 **Context:** adapting KAIF skills/hooks and the voice/browser harness to Kimi on Windows.

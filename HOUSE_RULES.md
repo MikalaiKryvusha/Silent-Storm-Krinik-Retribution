@@ -62,7 +62,7 @@
 | Инструмент | Где / команда | Для чего |
 |---|---|---|
 | KAIF 2.9 (+ 2.10 WIP) | `node .kaif/kaif-core.mjs <команда>` · `npm run kaif:check` · `npm run kimi:skills` | методология: канон, 37 нативных скилов Kimi в `.agents/skills/`, проверка их YAML и команд |
-| Kimi Code | проектный `AGENTS.md` · `.kimi-code/mcp.json` | основная агентская среда; вход `/skill:resume`, мягкое закрытие `/skill:end-chat-soft` |
+| Kimi Code | проектный `AGENTS.md` · `.kimi-code/mcp.json` · `.kaif/hooks/context-window.mjs --selftest` | основная агентская среда; вход `/skill:resume`, мягкое закрытие `/skill:end-chat-soft`; окно меряется по `token_counting.measured` во время хода |
 | Emscripten SDK 7.0.0 | `D:\work\ai_sandbox\_tools\emsdk` (`upstream\emscripten\emcc.exe`, конфиг `.emscripten`) | C++ → WebAssembly |
 | EmdawnWebGPU (Dawn v20260423.175430) | флаг `--use-port=emdawnwebgpu` (порт кешируется в emsdk) | WebGPU из C++ (`webgpu.h` / `webgpu_cpp.h`) |
 | LLVM 23.1.6 | `D:\work\ai_sandbox\_tools\clang+llvm-23.1.6-x86_64-pc-windows-msvc\bin` | clang-cl, clang-tidy, clang-format, Static Analyzer, ASan, UBSan, libFuzzer |
