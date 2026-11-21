@@ -1,0 +1,36 @@
+.kaif/install/
+/KAIF.md
+/KAIF-LOADER.mjs
+/KAIF_ADAPTATION_TASK.md
+/KAIF_UPDATE_TASK.md
+/KAIF_UPDATE_TASK.superseded.md
+/KAIF_ADAPTATION_TASK.superseded.md
+.kaif/backup-*/
+.kaif/update-journal.json
+.kaif/heartbeat.log
+.kaif/guarded-loop.json
+.kaif/refresh-marker.json
+.kaif/voice-marker.json
+.kaif/subagent-preamble.jsonl
+/FAREWELL_MESSAGE_FROM_THE_PREVIOUS_CHAT.md
+.kaif/farewell-capture.json
+.kaif/knowledge-moment.json
+.kaif/owner-presence.json
+.kaif/context-window.json
+.kaif/test-debt.json
+.kaif/contour-window/
+.kaif/.contour-tmp/
+interviews/decisions/*.lock
+.kaif/update-rehearsal.json
+.kaif/kimi-voice.log
+/voice/
+
+# Owner voice portrait (public snapshot) - kept out of the public repo, as in sibling projects
+AUTHOR_STYLOMETRY.md
+
+/build/
+
+# Third-party source trees the owner keeps alongside (separate git repos, not part of this repository)
+/Silent-Storm-Reconstruction/
+/silent-storm-port/
+/upstream/

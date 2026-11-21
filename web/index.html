@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="icon" href="data:,">
+  <title>Krinik-Retribution — browser prototype</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #080b12; }
+    body { color: #e8edf7; font-family: system-ui, sans-serif; }
+    canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+    #status {
+      position: fixed; inset: max(12px, env(safe-area-inset-top)) auto auto max(12px, env(safe-area-inset-left));
+      padding: 8px 12px; border: 1px solid #526079; border-radius: 8px;
+      background: rgb(8 11 18 / 82%); pointer-events: none; font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" data-pointer-count="0" aria-label="Interactive WebGPU prototype"></canvas>
+  <div id="status" data-state="loading" role="status">Loading WebAssembly…</div>
+  <script>
+    window.Module = {
+      canvas: document.getElementById('canvas'),
+      onAbort: (reason) => {
+        const status = document.getElementById('status');
+        status.dataset.state = 'error';
+        status.textContent = `WebAssembly stopped: ${reason}`;
+      },
+    };
+    window.addEventListener('error', (event) => {
+      const status = document.getElementById('status');
+      status.dataset.state = 'error';
+      status.textContent = event.message;
+    });
+  </script>
+  <script src="kr.js"></script>
+</body>
+</html>

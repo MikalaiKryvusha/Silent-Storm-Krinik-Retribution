@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "kuips": {
+      "command": "node",
+      "args": ["D:/work/ai_sandbox/KUIPS/bin/kuips.mjs", "mcp", "--root", "D:/work/ai_sandbox/Silent-Storm-Krinik-Retribution"]
+    },
+    "rea": {
+      "command": "D:/work/ai_sandbox/_tools/node24/node-v24.22.2-win-x64/node.exe",
+      "args": ["D:/work/ai_sandbox/_tools/node24/rea/node_modules/rea-agents/scripts/rea.mjs", "mcp"],
+      "env": {
+        "GHIDRA_INSTALL_DIR": "D:/work/ai_sandbox/_tools/ghidra/ghidra_12.2_PUBLIC"
+      }
+    }
+  }
+}

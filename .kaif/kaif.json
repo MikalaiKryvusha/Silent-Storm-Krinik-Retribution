@@ -1,0 +1,27 @@
+{
+  "framework": "KAIF",
+  "version": "2.9",
+  "released": "2026-10-16",
+  "origin": "https://github.com/MikalaiKryvusha/KAIF",
+  "tracking": "origin",
+  "sphere": "programming",
+  "agents": [
+    "claude-code",
+    "codex",
+    "grok-build",
+    "cline",
+    "zoo-code"
+  ],
+  "language": "ru",
+  "canonArtifacts": [],
+  "build": "e8d580590713",
+  "prerelease": "2.10",
+  "projectName": "Krinik-Retribution",
+  "contextWindow": {
+    "tokens": 1048576,
+    "warnPct": 75,
+    "cutPct": 80,
+    "closePct": 85,
+    "forcePct": 92
+  }
+}
